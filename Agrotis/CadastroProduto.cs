@@ -102,7 +102,6 @@ namespace Agrotis
                     foreach (DataGridViewRow row in dataGridViewProdutos.SelectedRows)
                     {
                         int cod = Convert.ToInt32(row.Cells[codigo_produto.DataPropertyName].Value.ToString());
-                        Produto ped = context.Produto.Where(s => s.codigo_produto == cod).FirstOrDefault();
                         tabControl1.SelectedTab = tabControl1.TabPages[1];
                         produto = cod;
                         estado = "editar";
@@ -126,11 +125,7 @@ namespace Agrotis
                     edtCodigo.Text = c.codigo_produto.ToString();
                     edtDescricao.Text = c.descricao;
                     edtPesoLiquido.Text = c.peso_liquido.ToString();
-                    edtPrecoUnitario.Text = c.preco_unitario.ToString();                
-                }
-                else
-                {
-
+                    edtPrecoUnitario.Text = c.preco_unitario.ToString();
                 }
             }
         }

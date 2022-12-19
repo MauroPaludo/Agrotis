@@ -33,7 +33,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.maskedCEP = new System.Windows.Forms.MaskedTextBox();
             this.lblCodigoIbge = new System.Windows.Forms.Label();
             this.edtCodigoIBGE = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,8 +119,6 @@
             // 
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.edtCodigo);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.maskedCEP);
             this.tabPage2.Controls.Add(this.lblCodigoIbge);
             this.tabPage2.Controls.Add(this.edtCodigoIBGE);
@@ -137,6 +135,8 @@
             this.tabPage2.Controls.Add(this.lblCep);
             this.tabPage2.Controls.Add(this.lblNome);
             this.tabPage2.Controls.Add(this.edtNome);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -145,24 +145,12 @@
             this.tabPage2.Text = "Editar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(353, 265);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 39);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "    Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // maskedCEP
             // 
             this.maskedCEP.Location = new System.Drawing.Point(94, 58);
             this.maskedCEP.Name = "maskedCEP";
             this.maskedCEP.Size = new System.Drawing.Size(67, 20);
-            this.maskedCEP.TabIndex = 49;
+            this.maskedCEP.TabIndex = 3;
             this.maskedCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.maskedCEP.Leave += new System.EventHandler(this.maskedCEP_Leave);
             // 
@@ -181,7 +169,7 @@
             this.edtCodigoIBGE.Location = new System.Drawing.Point(94, 188);
             this.edtCodigoIBGE.Name = "edtCodigoIBGE";
             this.edtCodigoIBGE.Size = new System.Drawing.Size(246, 20);
-            this.edtCodigoIBGE.TabIndex = 47;
+            this.edtCodigoIBGE.TabIndex = 9;
             // 
             // lblUF
             // 
@@ -198,7 +186,7 @@
             this.edtUF.Location = new System.Drawing.Point(380, 162);
             this.edtUF.Name = "edtUF";
             this.edtUF.Size = new System.Drawing.Size(78, 20);
-            this.edtUF.TabIndex = 45;
+            this.edtUF.TabIndex = 8;
             // 
             // lblCidade
             // 
@@ -215,7 +203,7 @@
             this.edtCidade.Location = new System.Drawing.Point(94, 162);
             this.edtCidade.Name = "edtCidade";
             this.edtCidade.Size = new System.Drawing.Size(246, 20);
-            this.edtCidade.TabIndex = 43;
+            this.edtCidade.TabIndex = 7;
             // 
             // lblBairro
             // 
@@ -231,7 +219,7 @@
             this.edtBairro.Location = new System.Drawing.Point(94, 136);
             this.edtBairro.Name = "edtBairro";
             this.edtBairro.Size = new System.Drawing.Size(364, 20);
-            this.edtBairro.TabIndex = 41;
+            this.edtBairro.TabIndex = 6;
             // 
             // lblComplemento
             // 
@@ -247,7 +235,7 @@
             this.edtComplemento.Location = new System.Drawing.Point(94, 110);
             this.edtComplemento.Name = "edtComplemento";
             this.edtComplemento.Size = new System.Drawing.Size(364, 20);
-            this.edtComplemento.TabIndex = 39;
+            this.edtComplemento.TabIndex = 5;
             // 
             // lblLogradouro
             // 
@@ -263,7 +251,7 @@
             this.edtLogradouro.Location = new System.Drawing.Point(94, 84);
             this.edtLogradouro.Name = "edtLogradouro";
             this.edtLogradouro.Size = new System.Drawing.Size(364, 20);
-            this.edtLogradouro.TabIndex = 37;
+            this.edtLogradouro.TabIndex = 4;
             // 
             // lblCep
             // 
@@ -288,7 +276,7 @@
             this.edtNome.Location = new System.Drawing.Point(94, 32);
             this.edtNome.Name = "edtNome";
             this.edtNome.Size = new System.Drawing.Size(279, 20);
-            this.edtNome.TabIndex = 34;
+            this.edtNome.TabIndex = 2;
             // 
             // codigo_cliente
             // 
@@ -359,7 +347,7 @@
             this.edtCodigo.Location = new System.Drawing.Point(94, 6);
             this.edtCodigo.Name = "edtCodigo";
             this.edtCodigo.Size = new System.Drawing.Size(279, 20);
-            this.edtCodigo.TabIndex = 52;
+            this.edtCodigo.TabIndex = 1;
             // 
             // button3
             // 
@@ -408,6 +396,18 @@
             this.btnFechar.Text = "      Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(353, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 39);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "    Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

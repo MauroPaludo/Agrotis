@@ -50,9 +50,6 @@ namespace Agrotis
                     edtPrecoTotalPedido.Text = ped.preco_pedido.ToString();
                     dataGridViewItensPedido.DataSource = context.ItensPedido.Where(s => s.codigo_pedido == pedido).ToList();
                 }
-                else
-                {
-                }
             }
         }
 
@@ -77,17 +74,6 @@ namespace Agrotis
                 return false;
              }
             return true;
-        }
-
-        private void AtualizaGrid()
-        {
-            using (var context = new Contexto())
-            {
-                //  dataGridViewClientes.DataSource = context.Cliente.ToList();
-                Decimal pedido = Convert.ToDecimal(edtCodigoPedido.Text);
-                dataGridViewItensPedido.DataSource = context.ItensPedido.Where(s => s.codigo_pedido == pedido).ToList();
-            }
-
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -171,6 +157,17 @@ namespace Agrotis
         {
 
         }
+
+        private void LimpaCamposProduto()
+        {
+            edtDescricaoProduto.Text = "";
+            edtQuantidade.Value = 0;
+            edtPesoItem.Text = "";
+            edtPrecoItem.Text = "";
+            edtUnitario.Text = "";
+            edtPesoUnitario.Text = "";
+            edtProduto.Text = "";
+        }
         private void LimpaCampos()
         {
             edtDescricaoProduto.Text = "";
@@ -180,6 +177,10 @@ namespace Agrotis
             edtUnitario.Text = "";
             edtPesoUnitario.Text = "";
             edtProduto.Text = "";
+            edtNomeCliente.Text = "";
+            edtCodigoCliente.Text = "";
+            dateEmissao.Value = DateTime.Now;
+            dataGridViewItensPedido.DataSource = null;
         }
 
         private void edtQuantidade_ValueChanged_1(object sender, EventArgs e)
@@ -211,8 +212,6 @@ namespace Agrotis
                     foreach (DataGridViewRow row in dataGridViewPedidos.SelectedRows)
                     {
                         int cod = Convert.ToInt32(row.Cells[codigo_pedido.DataPropertyName].Value.ToString());
-                        Pedido ped = context.Pedido.Where(s => s.codigo_pedido == cod).FirstOrDefault();
-
                         tabControl1.SelectedTab = tabControl1.TabPages[1];
                         pedido = cod;
                         estado = "editar";
@@ -286,6 +285,7 @@ namespace Agrotis
                 {
                     context.Pedido.Add(new Pedido { codigo_pedido = Convert.ToInt32(edtCodigoPedido.Text), codigo_cliente = Convert.ToInt32(edtCodigoCliente.Text), nome_cliente = edtNomeCliente.Text, emissao = dateEmissao.Value });
                     context.SaveChanges();
+                    pedido = Convert.ToInt32(edtCodigoPedido.Text);
                 }
 
                 if (ValidaItem())
@@ -297,6 +297,7 @@ namespace Agrotis
                         ped.peso_total = Convert.ToDecimal(edtPesoItem.Text);
                         ped.preco_total = Convert.ToDecimal(edtPrecoItem.Text);
                         ped.codigo_produto = Convert.ToInt32(edtProduto.Text);
+                        ped.descricao_produto = edtDescricaoProduto.Text;
                         ped.preco_unitario = Convert.ToDecimal(edtUnitario.Text);
                         ped.peso_liquido = Convert.ToDecimal(edtPesoUnitario.Text);
                     }
@@ -309,12 +310,13 @@ namespace Agrotis
                             peso_total = Convert.ToDecimal(edtPesoItem.Text),
                             preco_total = Convert.ToDecimal(edtPrecoItem.Text),
                             codigo_produto = Convert.ToInt32(edtProduto.Text),
+                            descricao_produto = edtDescricaoProduto.Text,
                             preco_unitario = Convert.ToDecimal(edtUnitario.Text),
                             peso_liquido = Convert.ToDecimal(edtPesoUnitario.Text),
-                        });
+                        }) ;
                     }
                     context.SaveChanges();
-                    LimpaCampos();
+                    dataGridViewItensPedido.DataSource = context.ItensPedido.Where(s => s.codigo_pedido == pedido).ToList();
                     estado_item = "novo";
                 }
 
@@ -329,7 +331,8 @@ namespace Agrotis
                     edtPesoTotalPedido.Text = ped.peso_pedido.ToString();
                     context.SaveChanges();
                 }
-                AtualizaGrid();
+                CarregaDados();
+                LimpaCamposProduto();
                 estado = "editar";
             }
         }
@@ -408,6 +411,7 @@ namespace Agrotis
 
         private void button4_Click(object sender, EventArgs e)
         {
+            LimpaCampos();
             tabControl1.SelectedTab = tabControl1.TabPages[1];
             pedido = 0;
             estado = "novo";
@@ -422,7 +426,6 @@ namespace Agrotis
                 {
                     edtCodigoPedido.Text = "1";
                 }
-
             }
         }
 
@@ -437,6 +440,10 @@ namespace Agrotis
                     {
                         int cod = Convert.ToInt32(row.Cells[codigo_pedido.DataPropertyName].Value.ToString());
                         Pedido ped = context.Pedido.Where(s => s.codigo_pedido == cod).FirstOrDefault();
+                        foreach(ItensPedido itens in context.ItensPedido.Where(s => s.codigo_pedido == cod).ToList())
+                        {
+                            context.ItensPedido.Remove(itens);
+                        }
                         context.Pedido.Remove(ped);
                         context.SaveChanges();
                         CarregaDados();
@@ -472,6 +479,11 @@ namespace Agrotis
                     MessageBox.Show("Selecione um Pedido !!!");
                 }
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }    
 }

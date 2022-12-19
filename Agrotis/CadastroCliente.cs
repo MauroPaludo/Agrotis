@@ -20,6 +20,7 @@ namespace Agrotis
     {
         public Decimal codigo = 0;
         public String estado = "";
+
         public CadastroCliente()
         {
             InitializeComponent();
@@ -76,7 +77,7 @@ namespace Agrotis
         {
             using (var context = new Contexto())
             {
-                dataGridViewClientes.DataSource = context.Cliente.ToList();
+                dataGridViewClientes.DataSource = context.Cliente.ToList();             
             }             
         }
 
@@ -105,7 +106,6 @@ namespace Agrotis
                     foreach (DataGridViewRow row in dataGridViewClientes.SelectedRows)
                     {
                         int cod = Convert.ToInt32(row.Cells[codigo_cliente.DataPropertyName].Value.ToString());
-                        Cliente ped = context.Cliente.Where(s => s.codigo_cliente == cod).FirstOrDefault();
                         tabControl1.SelectedTab = tabControl1.TabPages[1];
                         codigo = cod;
                         estado = "editar";
@@ -145,8 +145,6 @@ namespace Agrotis
         {
             try
             {
-
-
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + maskedCEP.Text + "/json/");
                 request.AllowAutoRedirect = false;
                 HttpWebResponse ChecaServidor = (HttpWebResponse)request.GetResponse();

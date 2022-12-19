@@ -30,9 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.dataGridViewPedidos = new System.Windows.Forms.DataGridView();
+            this.codigo_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelItens = new System.Windows.Forms.Panel();
+            this.btnEditarItem = new System.Windows.Forms.Button();
+            this.btnRemoverItem = new System.Windows.Forms.Button();
+            this.btnConfirmarItem = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.edtPrecoItem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.edtPesoItem = new System.Windows.Forms.TextBox();
@@ -46,12 +61,14 @@
             this.edtProduto = new System.Windows.Forms.TextBox();
             this.lblProduto = new System.Windows.Forms.Label();
             this.edtDescricaoProduto = new System.Windows.Forms.TextBox();
+            this.btnProduto = new System.Windows.Forms.Button();
             this.lblItens = new System.Windows.Forms.Label();
             this.dataGridViewItensPedido = new System.Windows.Forms.DataGridView();
             this.dateEmissao = new System.Windows.Forms.DateTimePicker();
             this.lblNumeroPedido = new System.Windows.Forms.Label();
             this.edtCodigoPedido = new System.Windows.Forms.TextBox();
             this.edtNomeCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblBairro = new System.Windows.Forms.Label();
             this.edtPesoTotalPedido = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
@@ -60,31 +77,15 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.edtCodigoCliente = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnEditarItem = new System.Windows.Forms.Button();
             this.codigo_itenspedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_pedido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso_liquido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnRemoverItem = new System.Windows.Forms.Button();
-            this.btnConfirmarItem = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnProduto = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).BeginInit();
@@ -119,6 +120,54 @@
             this.tabPage1.Text = "Pedidos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Image = global::Agrotis.Properties.Resources.adicionar_aplicativos__2___1_;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(724, 646);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(89, 37);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "    Novo";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::Agrotis.Properties.Resources.botao_editar__2_1;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(551, 646);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(82, 37);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "    Editar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Image = global::Agrotis.Properties.Resources.excluir_aplicativos__1___1_;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(633, 646);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(91, 37);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "    Excluir";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(459, 646);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(93, 37);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "    Fechar";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // dataGridViewPedidos
             // 
             this.dataGridViewPedidos.AllowUserToAddRows = false;
@@ -137,6 +186,50 @@
             this.dataGridViewPedidos.Size = new System.Drawing.Size(803, 634);
             this.dataGridViewPedidos.TabIndex = 0;
             this.dataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPedidos_CellContentClick);
+            // 
+            // codigo_pedido
+            // 
+            this.codigo_pedido.DataPropertyName = "codigo_pedido";
+            this.codigo_pedido.HeaderText = "Nro Pedido";
+            this.codigo_pedido.Name = "codigo_pedido";
+            this.codigo_pedido.ReadOnly = true;
+            // 
+            // codigo_cliente
+            // 
+            this.codigo_cliente.DataPropertyName = "codigo_cliente";
+            this.codigo_cliente.HeaderText = "Cliente";
+            this.codigo_cliente.Name = "codigo_cliente";
+            this.codigo_cliente.ReadOnly = true;
+            this.codigo_cliente.Width = 120;
+            // 
+            // nome_cliente
+            // 
+            this.nome_cliente.DataPropertyName = "nome_cliente";
+            this.nome_cliente.HeaderText = "Nome";
+            this.nome_cliente.Name = "nome_cliente";
+            this.nome_cliente.ReadOnly = true;
+            this.nome_cliente.Width = 250;
+            // 
+            // emissao
+            // 
+            this.emissao.DataPropertyName = "emissao";
+            this.emissao.HeaderText = "Data Emissão";
+            this.emissao.Name = "emissao";
+            this.emissao.ReadOnly = true;
+            // 
+            // peso_pedido
+            // 
+            this.peso_pedido.DataPropertyName = "peso_pedido";
+            this.peso_pedido.HeaderText = "Peso Pedido";
+            this.peso_pedido.Name = "peso_pedido";
+            this.peso_pedido.ReadOnly = true;
+            // 
+            // preco_pedido
+            // 
+            this.preco_pedido.DataPropertyName = "preco_pedido";
+            this.preco_pedido.HeaderText = "Preço Pedido";
+            this.preco_pedido.Name = "preco_pedido";
+            this.preco_pedido.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -192,8 +285,69 @@
             this.panelItens.TabIndex = 38;
             this.panelItens.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
+            // btnEditarItem
+            // 
+            this.btnEditarItem.Image = global::Agrotis.Properties.Resources.botao_editar__2_1;
+            this.btnEditarItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarItem.Location = new System.Drawing.Point(704, 126);
+            this.btnEditarItem.Name = "btnEditarItem";
+            this.btnEditarItem.Size = new System.Drawing.Size(96, 36);
+            this.btnEditarItem.TabIndex = 8;
+            this.btnEditarItem.Text = "     Editar ";
+            this.btnEditarItem.UseVisualStyleBackColor = true;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click_1);
+            // 
+            // btnRemoverItem
+            // 
+            this.btnRemoverItem.Image = global::Agrotis.Properties.Resources.excluir_aplicativos__1___1_1;
+            this.btnRemoverItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoverItem.Location = new System.Drawing.Point(610, 126);
+            this.btnRemoverItem.Name = "btnRemoverItem";
+            this.btnRemoverItem.Size = new System.Drawing.Size(97, 36);
+            this.btnRemoverItem.TabIndex = 7;
+            this.btnRemoverItem.Text = "       Remover ";
+            this.btnRemoverItem.UseVisualStyleBackColor = true;
+            this.btnRemoverItem.Click += new System.EventHandler(this.btnRemoverItem_Click);
+            // 
+            // btnConfirmarItem
+            // 
+            this.btnConfirmarItem.Image = global::Agrotis.Properties.Resources.marca_de_verificacao__1_;
+            this.btnConfirmarItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmarItem.Location = new System.Drawing.Point(512, 126);
+            this.btnConfirmarItem.Name = "btnConfirmarItem";
+            this.btnConfirmarItem.Size = new System.Drawing.Size(99, 36);
+            this.btnConfirmarItem.TabIndex = 6;
+            this.btnConfirmarItem.Text = "      Confirmar";
+            this.btnConfirmarItem.UseVisualStyleBackColor = true;
+            this.btnConfirmarItem.Click += new System.EventHandler(this.btnConfirmarItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(699, 491);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 45);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "    Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Agrotis.Properties.Resources.opcao_de_salvar_arquivo__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(589, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 45);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "    Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // edtPrecoItem
             // 
+            this.edtPrecoItem.Enabled = false;
             this.edtPrecoItem.Location = new System.Drawing.Point(130, 132);
             this.edtPrecoItem.Name = "edtPrecoItem";
             this.edtPrecoItem.Size = new System.Drawing.Size(73, 20);
@@ -228,7 +382,7 @@
             // edtPesoUnitario
             // 
             this.edtPesoUnitario.Enabled = false;
-            this.edtPesoUnitario.Location = new System.Drawing.Point(346, 57);
+            this.edtPesoUnitario.Location = new System.Drawing.Point(349, 57);
             this.edtPesoUnitario.Name = "edtPesoUnitario";
             this.edtPesoUnitario.Size = new System.Drawing.Size(73, 20);
             this.edtPesoUnitario.TabIndex = 30;
@@ -236,7 +390,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 60);
+            this.label2.Location = new System.Drawing.Point(249, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 29;
@@ -264,7 +418,7 @@
             this.edtQuantidade.Location = new System.Drawing.Point(128, 83);
             this.edtQuantidade.Name = "edtQuantidade";
             this.edtQuantidade.Size = new System.Drawing.Size(73, 20);
-            this.edtQuantidade.TabIndex = 26;
+            this.edtQuantidade.TabIndex = 5;
             this.edtQuantidade.ValueChanged += new System.EventHandler(this.edtQuantidade_ValueChanged_1);
             // 
             // lblQuantidade
@@ -278,6 +432,7 @@
             // 
             // edtProduto
             // 
+            this.edtProduto.Enabled = false;
             this.edtProduto.Location = new System.Drawing.Point(128, 30);
             this.edtProduto.Name = "edtProduto";
             this.edtProduto.Size = new System.Drawing.Size(73, 20);
@@ -295,10 +450,23 @@
             // 
             // edtDescricaoProduto
             // 
+            this.edtDescricaoProduto.Enabled = false;
             this.edtDescricaoProduto.Location = new System.Drawing.Point(207, 30);
             this.edtDescricaoProduto.Name = "edtDescricaoProduto";
             this.edtDescricaoProduto.Size = new System.Drawing.Size(307, 20);
             this.edtDescricaoProduto.TabIndex = 22;
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.Image = global::Agrotis.Properties.Resources.procurar__1_;
+            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduto.Location = new System.Drawing.Point(519, 19);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(116, 43);
+            this.btnProduto.TabIndex = 4;
+            this.btnProduto.Text = "    Buscar Produto";
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click_1);
             // 
             // lblItens
             // 
@@ -317,6 +485,7 @@
             this.codigo_itenspedido,
             this.codigo_pedido2,
             this.codigo_produto,
+            this.descricao_produto,
             this.quantidade,
             this.preco_unitario,
             this.peso_liquido,
@@ -329,15 +498,15 @@
             // 
             // dateEmissao
             // 
-            this.dateEmissao.Location = new System.Drawing.Point(136, 64);
+            this.dateEmissao.Location = new System.Drawing.Point(77, 62);
             this.dateEmissao.Name = "dateEmissao";
             this.dateEmissao.Size = new System.Drawing.Size(215, 20);
-            this.dateEmissao.TabIndex = 37;
+            this.dateEmissao.TabIndex = 3;
             // 
             // lblNumeroPedido
             // 
             this.lblNumeroPedido.AutoSize = true;
-            this.lblNumeroPedido.Location = new System.Drawing.Point(69, 15);
+            this.lblNumeroPedido.Location = new System.Drawing.Point(10, 13);
             this.lblNumeroPedido.Name = "lblNumeroPedido";
             this.lblNumeroPedido.Size = new System.Drawing.Size(63, 13);
             this.lblNumeroPedido.TabIndex = 36;
@@ -345,56 +514,76 @@
             // 
             // edtCodigoPedido
             // 
-            this.edtCodigoPedido.Location = new System.Drawing.Point(136, 12);
+            this.edtCodigoPedido.Enabled = false;
+            this.edtCodigoPedido.Location = new System.Drawing.Point(77, 10);
             this.edtCodigoPedido.Name = "edtCodigoPedido";
             this.edtCodigoPedido.Size = new System.Drawing.Size(183, 20);
-            this.edtCodigoPedido.TabIndex = 35;
+            this.edtCodigoPedido.TabIndex = 1;
             // 
             // edtNomeCliente
             // 
-            this.edtNomeCliente.Location = new System.Drawing.Point(215, 37);
+            this.edtNomeCliente.Enabled = false;
+            this.edtNomeCliente.Location = new System.Drawing.Point(156, 35);
             this.edtNomeCliente.Name = "edtNomeCliente";
             this.edtNomeCliente.Size = new System.Drawing.Size(307, 20);
             this.edtNomeCliente.TabIndex = 34;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Image = global::Agrotis.Properties.Resources.procurar__1_;
+            this.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(467, 23);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(118, 42);
+            this.btnBuscarCliente.TabIndex = 2;
+            this.btnBuscarCliente.Text = "    Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click_1);
+            // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(14, 119);
+            this.lblBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblBairro.Location = new System.Drawing.Point(573, 118);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(121, 13);
+            this.lblBairro.Size = new System.Drawing.Size(144, 13);
             this.lblBairro.TabIndex = 32;
             this.lblBairro.Text = "Peso Total Pedido (KG):";
             // 
             // edtPesoTotalPedido
             // 
             this.edtPesoTotalPedido.Enabled = false;
-            this.edtPesoTotalPedido.Location = new System.Drawing.Point(136, 116);
+            this.edtPesoTotalPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtPesoTotalPedido.Location = new System.Drawing.Point(723, 113);
             this.edtPesoTotalPedido.Name = "edtPesoTotalPedido";
-            this.edtPesoTotalPedido.Size = new System.Drawing.Size(75, 20);
+            this.edtPesoTotalPedido.Size = new System.Drawing.Size(75, 22);
             this.edtPesoTotalPedido.TabIndex = 31;
             // 
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(9, 93);
+            this.lblComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblComplemento.Location = new System.Drawing.Point(568, 92);
             this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(124, 13);
+            this.lblComplemento.Size = new System.Drawing.Size(148, 13);
             this.lblComplemento.TabIndex = 30;
             this.lblComplemento.Text = "Preço Total Pedido (R$):";
             // 
             // edtPrecoTotalPedido
             // 
             this.edtPrecoTotalPedido.Enabled = false;
-            this.edtPrecoTotalPedido.Location = new System.Drawing.Point(136, 90);
+            this.edtPrecoTotalPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtPrecoTotalPedido.Location = new System.Drawing.Point(723, 87);
             this.edtPrecoTotalPedido.Name = "edtPrecoTotalPedido";
-            this.edtPrecoTotalPedido.Size = new System.Drawing.Size(75, 20);
+            this.edtPrecoTotalPedido.Size = new System.Drawing.Size(75, 22);
             this.edtPrecoTotalPedido.TabIndex = 29;
             // 
             // lblLogradouro
             // 
             this.lblLogradouro.AutoSize = true;
-            this.lblLogradouro.Location = new System.Drawing.Point(98, 64);
+            this.lblLogradouro.Location = new System.Drawing.Point(39, 62);
             this.lblLogradouro.Name = "lblLogradouro";
             this.lblLogradouro.Size = new System.Drawing.Size(33, 13);
             this.lblLogradouro.TabIndex = 28;
@@ -403,7 +592,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(91, 41);
+            this.lblCliente.Location = new System.Drawing.Point(32, 39);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(42, 13);
             this.lblCliente.TabIndex = 27;
@@ -411,7 +600,8 @@
             // 
             // edtCodigoCliente
             // 
-            this.edtCodigoCliente.Location = new System.Drawing.Point(136, 37);
+            this.edtCodigoCliente.Enabled = false;
+            this.edtCodigoCliente.Location = new System.Drawing.Point(77, 35);
             this.edtCodigoCliente.Name = "edtCodigoCliente";
             this.edtCodigoCliente.Size = new System.Drawing.Size(75, 20);
             this.edtCodigoCliente.TabIndex = 26;
@@ -424,18 +614,6 @@
             this.btnAdicionar.TabIndex = 25;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarItem
-            // 
-            this.btnEditarItem.Image = global::Agrotis.Properties.Resources.botao_editar__2_1;
-            this.btnEditarItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarItem.Location = new System.Drawing.Point(704, 126);
-            this.btnEditarItem.Name = "btnEditarItem";
-            this.btnEditarItem.Size = new System.Drawing.Size(96, 36);
-            this.btnEditarItem.TabIndex = 51;
-            this.btnEditarItem.Text = "     Editar ";
-            this.btnEditarItem.UseVisualStyleBackColor = true;
-            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click_1);
             // 
             // codigo_itenspedido
             // 
@@ -455,6 +633,13 @@
             this.codigo_produto.DataPropertyName = "codigo_produto";
             this.codigo_produto.HeaderText = "Produto";
             this.codigo_produto.Name = "codigo_produto";
+            this.codigo_produto.Width = 50;
+            // 
+            // descricao_produto
+            // 
+            this.descricao_produto.DataPropertyName = "descricao_produto";
+            this.descricao_produto.HeaderText = "Descrição";
+            this.descricao_produto.Name = "descricao_produto";
             // 
             // quantidade
             // 
@@ -485,169 +670,6 @@
             this.peso_total.DataPropertyName = "peso_total";
             this.peso_total.HeaderText = "Peso Item";
             this.peso_total.Name = "peso_total";
-            // 
-            // codigo_pedido
-            // 
-            this.codigo_pedido.DataPropertyName = "codigo_pedido";
-            this.codigo_pedido.HeaderText = "Nro Pedido";
-            this.codigo_pedido.Name = "codigo_pedido";
-            this.codigo_pedido.ReadOnly = true;
-            // 
-            // codigo_cliente
-            // 
-            this.codigo_cliente.DataPropertyName = "codigo_cliente";
-            this.codigo_cliente.HeaderText = "Cliente";
-            this.codigo_cliente.Name = "codigo_cliente";
-            this.codigo_cliente.ReadOnly = true;
-            this.codigo_cliente.Width = 120;
-            // 
-            // nome_cliente
-            // 
-            this.nome_cliente.DataPropertyName = "nome_cliente";
-            this.nome_cliente.HeaderText = "Nome";
-            this.nome_cliente.Name = "nome_cliente";
-            this.nome_cliente.ReadOnly = true;
-            this.nome_cliente.Width = 250;
-            // 
-            // emissao
-            // 
-            this.emissao.DataPropertyName = "emissao";
-            this.emissao.HeaderText = "Data Emissão";
-            this.emissao.Name = "emissao";
-            this.emissao.ReadOnly = true;
-            // 
-            // peso_pedido
-            // 
-            this.peso_pedido.DataPropertyName = "peso_pedido";
-            this.peso_pedido.HeaderText = "Peso Pedido";
-            this.peso_pedido.Name = "peso_pedido";
-            this.peso_pedido.ReadOnly = true;
-            // 
-            // preco_pedido
-            // 
-            this.preco_pedido.DataPropertyName = "preco_pedido";
-            this.preco_pedido.HeaderText = "Preço Pedido";
-            this.preco_pedido.Name = "preco_pedido";
-            this.preco_pedido.ReadOnly = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::Agrotis.Properties.Resources.adicionar_aplicativos__2___1_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(724, 646);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 37);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "    Novo";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::Agrotis.Properties.Resources.botao_editar__2_1;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(551, 646);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 37);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "    Editar";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Image = global::Agrotis.Properties.Resources.excluir_aplicativos__1___1_;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(633, 646);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(91, 37);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "    Excluir";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(459, 646);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 37);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "    Fechar";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoverItem
-            // 
-            this.btnRemoverItem.Image = global::Agrotis.Properties.Resources.excluir_aplicativos__1___1_1;
-            this.btnRemoverItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoverItem.Location = new System.Drawing.Point(610, 126);
-            this.btnRemoverItem.Name = "btnRemoverItem";
-            this.btnRemoverItem.Size = new System.Drawing.Size(97, 36);
-            this.btnRemoverItem.TabIndex = 50;
-            this.btnRemoverItem.Text = "       Remover ";
-            this.btnRemoverItem.UseVisualStyleBackColor = true;
-            this.btnRemoverItem.Click += new System.EventHandler(this.btnRemoverItem_Click);
-            // 
-            // btnConfirmarItem
-            // 
-            this.btnConfirmarItem.Image = global::Agrotis.Properties.Resources.marca_de_verificacao__1_;
-            this.btnConfirmarItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmarItem.Location = new System.Drawing.Point(512, 126);
-            this.btnConfirmarItem.Name = "btnConfirmarItem";
-            this.btnConfirmarItem.Size = new System.Drawing.Size(99, 36);
-            this.btnConfirmarItem.TabIndex = 49;
-            this.btnConfirmarItem.Text = "      Confirmar";
-            this.btnConfirmarItem.UseVisualStyleBackColor = true;
-            this.btnConfirmarItem.Click += new System.EventHandler(this.btnConfirmarItem_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Agrotis.Properties.Resources.cruz__1___1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(699, 491);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 45);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "    Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Agrotis.Properties.Resources.opcao_de_salvar_arquivo__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(589, 491);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 45);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "    Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnProduto
-            // 
-            this.btnProduto.Image = global::Agrotis.Properties.Resources.procurar__1_;
-            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduto.Location = new System.Drawing.Point(519, 19);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(116, 43);
-            this.btnProduto.TabIndex = 21;
-            this.btnProduto.Text = "    Buscar Produto";
-            this.btnProduto.UseVisualStyleBackColor = true;
-            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click_1);
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Image = global::Agrotis.Properties.Resources.procurar__1_;
-            this.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(526, 25);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(118, 42);
-            this.btnBuscarCliente.TabIndex = 33;
-            this.btnBuscarCliente.Text = "    Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click_1);
             // 
             // CadastroPedido
             // 
@@ -710,14 +732,6 @@
         private System.Windows.Forms.Button btnEditarItem;
         private System.Windows.Forms.Button btnRemoverItem;
         private System.Windows.Forms.Button btnConfirmarItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_itenspedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_pedido2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preco_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peso_liquido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preco_total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peso_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_cliente;
@@ -728,5 +742,14 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_itenspedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_pedido2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso_liquido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso_total;
     }
 }

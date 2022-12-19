@@ -118,6 +118,7 @@
             this.Controls.Add(this.dataGridViewResult);
             this.Name = "ZoomProdutos";
             this.Text = "Busca Produtos";
+            this.Load += new System.EventHandler(this.ZoomProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -39,7 +39,11 @@ namespace Agrotis
                         var ret = context.Cliente.Where(s => s.codigo_cliente == Convert.ToInt32(cod));
                     }
                     Close();
-                }              
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um Registro !!!");
+                }
             }             
         }
 
@@ -74,6 +78,11 @@ namespace Agrotis
         }
 
         private void dataGridViewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ZoomProdutos_Load(object sender, EventArgs e)
         {
 
         }

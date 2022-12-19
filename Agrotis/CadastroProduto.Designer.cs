@@ -129,7 +129,7 @@
             this.edtCodigo.Location = new System.Drawing.Point(116, 28);
             this.edtCodigo.Name = "edtCodigo";
             this.edtCodigo.Size = new System.Drawing.Size(86, 20);
-            this.edtCodigo.TabIndex = 17;
+            this.edtCodigo.TabIndex = 1;
             // 
             // lblPrecoUnitario
             // 
@@ -145,7 +145,7 @@
             this.edtPrecoUnitario.Location = new System.Drawing.Point(116, 106);
             this.edtPrecoUnitario.Name = "edtPrecoUnitario";
             this.edtPrecoUnitario.Size = new System.Drawing.Size(86, 20);
-            this.edtPrecoUnitario.TabIndex = 15;
+            this.edtPrecoUnitario.TabIndex = 4;
             // 
             // lblPesoLiquido
             // 
@@ -161,7 +161,7 @@
             this.edtPesoLiquido.Location = new System.Drawing.Point(116, 80);
             this.edtPesoLiquido.Name = "edtPesoLiquido";
             this.edtPesoLiquido.Size = new System.Drawing.Size(86, 20);
-            this.edtPesoLiquido.TabIndex = 13;
+            this.edtPesoLiquido.TabIndex = 3;
             // 
             // lblDescricao
             // 
@@ -177,7 +177,7 @@
             this.edtDescricao.Location = new System.Drawing.Point(116, 54);
             this.edtDescricao.Name = "edtDescricao";
             this.edtDescricao.Size = new System.Drawing.Size(292, 20);
-            this.edtDescricao.TabIndex = 11;
+            this.edtDescricao.TabIndex = 2;
             // 
             // codigo_produto
             // 

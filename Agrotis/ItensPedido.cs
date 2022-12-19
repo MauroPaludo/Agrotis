@@ -13,6 +13,7 @@ namespace Agrotis
         public int codigo_itenspedido { get; set; }
         public int codigo_pedido { get; set; }
         public int codigo_produto { get; set; }
+        public string descricao_produto { get; set; }
         public Decimal quantidade { get; set; }
         public Decimal preco_unitario { get; set; }
         public Decimal peso_liquido { get; set; }
