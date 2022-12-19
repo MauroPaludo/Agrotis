@@ -180,6 +180,8 @@ namespace Agrotis
             edtNomeCliente.Text = "";
             edtCodigoCliente.Text = "";
             dateEmissao.Value = DateTime.Now;
+            edtPrecoTotalPedido.Text = "";
+            edtPesoTotalPedido.Text = "";
             dataGridViewItensPedido.DataSource = null;
         }
 
